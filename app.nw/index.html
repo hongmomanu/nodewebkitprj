@@ -1,0 +1,33 @@
+<html>
+<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello World!</title>
+    <script type="text/javascript" src="extjs4.2.1/ext-all.js"></script>
+ <script type="text/javascript" src="extjs4.2.1/locale/ext-lang-zh_CN.js"></script>
+      
+<link rel="stylesheet" type="text/css" href="extjs4.2.1/resources/css/ext-all.css" />
+</head>
+<body>
+<script>
+      
+      var gui = require('nw.gui');
+      var win = gui.Window.get();
+      
+      var menu = new gui.Menu();
+        menu.append(new gui.MenuItem({
+        label: '退出程序',
+        click: function() {
+          gui.App.quit();
+        }
+      }));
+      var menubar = new gui.Menu({ type: 'menubar' });
+      menubar.append(new gui.MenuItem({ label: '操作', submenu: menu}));
+       
+      
+      win.menu = menubar;
+
+    </script>
+
+    <div id="log"></div>
+</body>
+</html>
