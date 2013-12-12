@@ -14,12 +14,19 @@
       var win = gui.Window.get();
       
       var menu = new gui.Menu();
-        menu.append(new gui.MenuItem({
+      menu.append(new gui.MenuItem({
         label: '退出程序',
         click: function() {
           gui.App.quit();
         }
       }));
+      menu.append(new gui.MenuItem({
+          label: '注销',
+          click: function() {
+              window.location.href="login.html";
+          }
+      }));
+
       var menubar = new gui.Menu({ type: 'menubar' });
       menubar.append(new gui.MenuItem({ label: '操作', submenu: menu}));
        
